@@ -1,0 +1,362 @@
+<title>Shota Nishitani</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Shota Nishitani, PhD — DNA methylation, brain–periphery epigenetics, childhood adversity and delirium.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+JP:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a fixed identity card (name, role, profile links) beside one reading column; stacks on phones. */
+:root{
+  --bg:#f6f7f5; --surface:#ffffff; --ink:#14211f; --ink-2:#4b5a57; --rule:#d9dfdc;
+  --methyl:#0e6b63; --methyl-soft:#d7ebe7; --unmethyl:#9aa9a6;
+  --font-display:"Bricolage Grotesque","IBM Plex Sans JP",system-ui,sans-serif;
+  --font-body:"IBM Plex Sans","IBM Plex Sans JP","Hiragino Sans",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --step--1:.8125rem; --step-0:1rem; --step-1:1.1875rem; --step-2:1.5rem; --step-4:clamp(2.4rem,5vw,3.4rem);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#0f1514;--surface:#151d1c;--ink:#e7eeec;--ink-2:#a7b6b2;--rule:#27322f;--methyl:#5cc3b5;--methyl-soft:#173a36;--unmethyl:#55645f;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#0f1514;--surface:#151d1c;--ink:#e7eeec;--ink-2:#a7b6b2;--rule:#27322f;--methyl:#5cc3b5;--methyl-soft:#173a36;--unmethyl:#55645f;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:var(--step-0);line-height:1.7}
+a{color:var(--methyl);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--methyl);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;line-height:1.15;margin:0}
+:root[data-lang="en"] [lang="ja"]{display:none!important}
+:root[data-lang="ja"] [lang="en"]{display:none!important}
+
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px;
+  display:grid;grid-template-columns:minmax(260px,330px) minmax(0,1fr);gap:56px}
+@media (max-width:860px){.wrap{grid-template-columns:minmax(0,1fr);gap:32px;padding-block:24px 48px}}
+
+.id{position:sticky;top:calc(env(safe-area-inset-top,0px) + 32px);align-self:start;display:flex;flex-direction:column;gap:18px}
+@media (max-width:860px){.id{position:static}}
+.eyebrow{font-family:var(--font-mono);font-size:var(--step--1);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.name{font-size:var(--step-4);font-weight:700;letter-spacing:-.01em}
+.name-ja{font-family:var(--font-body);font-weight:500;font-size:var(--step-1);color:var(--ink-2);margin-top:6px}
+.role{color:var(--ink-2);font-size:.95rem;line-height:1.6;margin:0}
+.role b{color:var(--ink);font-weight:600}
+.strip{display:block;width:100%;max-width:330px;height:auto}
+.strip text{font-family:var(--font-mono);font-size:9px;fill:var(--ink-2)}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.links a{font-family:var(--font-mono);font-size:var(--step--1);text-decoration:none;border:1px solid var(--rule);background:var(--surface);color:var(--ink);padding:5px 10px;border-radius:999px}
+.links a:hover{border-color:var(--methyl);color:var(--methyl)}
+.ids{font-family:var(--font-mono);font-size:.75rem;color:var(--ink-2);line-height:1.8}
+.lang{display:inline-flex;border:1px solid var(--rule);border-radius:999px;overflow:hidden;width:max-content}
+.lang button{font:500 var(--step--1)/1 var(--font-mono);border:0;background:transparent;color:var(--ink-2);padding:7px 12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+main{min-width:0;display:flex;flex-direction:column;gap:56px}
+section{display:flex;flex-direction:column;gap:18px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule);padding-bottom:10px}
+.sec-h h2{font-size:var(--step-2);font-weight:700}
+.sec-h .eyebrow{margin-left:auto}
+.lead{font-size:var(--step-1);line-height:1.65;max-width:62ch;margin:0}
+p{margin:0;max-width:65ch}
+
+.themes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px}
+@media (max-width:640px){.themes{grid-template-columns:minmax(0,1fr)}}
+.theme{display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:3px solid var(--methyl)}
+.theme h3{font-size:var(--step-1);font-weight:600}
+.theme p{color:var(--ink-2);font-size:.95rem}
+
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:640px){.tools{grid-template-columns:minmax(0,1fr)}}
+.tool{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.tool .t-name{font-family:var(--font-mono);font-weight:500;font-size:1.05rem;color:var(--methyl);display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.tool .t-new{font-size:.68rem;letter-spacing:.06em;padding:1px 7px;border-radius:999px;background:var(--methyl);color:var(--bg)}
+.tool p{color:var(--ink-2);font-size:.92rem}
+.tool .t-ref{font-size:var(--step--1);color:var(--ink-2)}
+.tool .go{margin-top:auto;display:flex;gap:14px;flex-wrap:wrap;font-family:var(--font-mono);font-size:var(--step--1)}
+.sub-h{font-family:var(--font-body);font-size:var(--step--1);font-weight:600;color:var(--ink-2);letter-spacing:.06em;text-transform:uppercase;margin-top:6px}
+
+.pubs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.pub{display:grid;grid-template-columns:3.5rem minmax(0,1fr);gap:14px;padding:13px 0;border-bottom:1px solid var(--rule)}
+.pub .yr{font-family:var(--font-mono);font-size:.9rem;color:var(--ink-2);padding-top:2px;font-variant-numeric:tabular-nums}
+.pub .ti{font-weight:500;line-height:1.5}
+.pub .au{font-size:.86rem;color:var(--ink-2);margin-top:3px}
+.pub .au b{color:var(--ink);font-weight:600}
+.pub .meta{font-size:.9rem;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-top:4px}
+.pub .meta i{color:var(--ink)}
+.badge{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.03em;padding:2px 8px;border-radius:999px;background:var(--methyl-soft);color:var(--methyl);white-space:nowrap}
+details.all{border:1px solid var(--rule);border-radius:10px;background:var(--surface);padding:12px 16px}
+details.all summary{cursor:pointer;font-weight:500;color:var(--methyl)}
+details.all .pubs{margin-top:8px}
+.note{font-size:var(--step--1);color:var(--ink-2)}
+
+.news{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.news li{display:grid;grid-template-columns:5.5rem minmax(0,1fr);gap:14px}
+.news time{font-family:var(--font-mono);font-size:.88rem;color:var(--ink-2);font-variant-numeric:tabular-nums;padding-top:2px}
+@media (max-width:480px){.news li,.pub{grid-template-columns:minmax(0,1fr);gap:2px}}
+
+.cv{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+@media (max-width:760px){.cv{grid-template-columns:minmax(0,1fr)}}
+.cv h3{font-size:var(--step-0);font-family:var(--font-body);font-weight:600;margin-bottom:8px}
+.cv dl{margin:0;display:grid;grid-template-columns:6.4rem minmax(0,1fr);gap:7px 12px;font-size:.92rem}
+.cv dt{font-family:var(--font-mono);color:var(--ink-2);font-variant-numeric:tabular-nums;font-size:.85rem;padding-top:1px}
+.cv dd{margin:0}
+.cv .stack{display:flex;flex-direction:column;gap:22px}
+footer{color:var(--ink-2);font-size:var(--step--1);border-top:1px solid var(--rule);padding-top:16px}
+</style>
+
+<div class="wrap">
+  <aside class="id" aria-label="Profile">
+    <div class="eyebrow">Imaging Epigenetics</div>
+    <div>
+      <h1 class="name">Shota Nishitani<span style="font-weight:500">, PhD</span></h1>
+      <div class="name-ja">西谷 正太</div>
+    </div>
+    <p class="role" lang="en"><b>Associate Project Scientist</b><br>Division of Geriatrics, Department of Family Medicine, School of Medicine, University of California, Irvine</p>
+    <p class="role" lang="ja"><b>准プロジェクトサイエンティスト</b><br>カリフォルニア大学アーバイン校 医学部 家庭医療学講座 老年医学部門</p>
+
+    <svg class="strip" viewBox="0 0 330 58" role="img" aria-label="Illustration of methylated and unmethylated CpG sites">
+      <line x1="6" y1="40" x2="324" y2="40" stroke="var(--rule)" stroke-width="2"/>
+      <g id="cpgs"></g>
+      <text x="6" y="56">CpG sites · ● methylated ○ unmethylated</text>
+    </svg>
+
+    <nav class="links" aria-label="Profiles">
+      <a href="https://scholar.google.com/citations?user=GiaWnTcAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-6234-295X" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://researchmap.jp/read0135016" target="_blank" rel="noopener">researchmap</a>
+      <a href="https://www.researchgate.net/profile/Shota-Nishitani" target="_blank" rel="noopener">ResearchGate</a>
+      <a href="https://github.com/snishit" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.webofscience.com/wos/author/record/S-5975-2016" target="_blank" rel="noopener">Web of Science</a>
+      <a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=200901067406487887" target="_blank" rel="noopener">J-GLOBAL</a>
+    </nav>
+    <div class="ids">ORCID 0000-0002-6234-295X<br>ResearcherID S-5975-2016</div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="btn-en" data-l="en" aria-pressed="true">EN</button>
+      <button type="button" id="btn-ja" data-l="ja" aria-pressed="false">日本語</button>
+    </div>
+  </aside>
+
+  <main>
+    <section aria-labelledby="h-about">
+      <div class="sec-h"><h2 id="h-about"><span lang="en">Research</span><span lang="ja">研究</span></h2></div>
+      <p class="lead" lang="en">I use DNA methylation to connect what happens in the brain with what we can measure in the body. My work asks how early caregiving and adversity become biologically embedded, and how blood, saliva and buccal samples can stand in for the living human brain, from childhood to old age.</p>
+      <p class="lead" lang="ja">DNA メチル化を手がかりに、脳で起きていることと体で測れることをつなぐ研究をしています。幼少期の養育や逆境の経験がどのように体に刻まれるのか、そして血液・唾液・頬粘膜のサンプルが生きたヒトの脳をどこまで代弁できるのかを、子どもから高齢者まで調べています。</p>
+      <div class="themes">
+        <div class="theme">
+          <h3><span lang="en">Brain–periphery methylation</span><span lang="ja">脳と末梢のメチル化</span></h3>
+          <p lang="en">Paired live human brain and peripheral tissues to map where blood or saliva methylation reflects the brain.</p>
+          <p lang="ja">生きたヒトの脳組織と末梢組織を対にして、末梢のメチル化が脳を反映する部位を地図にしています。</p>
+        </div>
+        <div class="theme">
+          <h3><span lang="en">Childhood adversity &amp; the epigenome</span><span lang="ja">逆境体験とエピゲノム</span></h3>
+          <p lang="en">Epigenome-wide studies of maltreatment, from intervened children to judicial autopsies.</p>
+          <p lang="ja">保護された子どもから司法解剖例まで、虐待経験に伴うゲノム全体のメチル化変化を調べています。</p>
+        </div>
+        <div class="theme">
+          <h3><span lang="en">Oxytocin &amp; social bonds</span><span lang="ja">オキシトシンと絆</span></h3>
+          <p lang="en">OXT/OXTR methylation, brain structure and function, and parent–child attachment.</p>
+          <p lang="ja">オキシトシン関連遺伝子のメチル化と、脳の構造・機能、親子の愛着との関係。</p>
+        </div>
+        <div class="theme">
+          <h3><span lang="en">Aging, inflammation &amp; delirium</span><span lang="ja">加齢・炎症・せん妄</span></h3>
+          <p lang="en">Epigenetic and neuroimmune signatures of postoperative delirium in older adults.</p>
+          <p lang="ja">高齢者の術後せん妄にみられるエピゲノムと神経免疫の特徴を調べています。</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-tools">
+      <div class="sec-h"><h2 id="h-tools"><span lang="en">Tools &amp; databases</span><span lang="ja">ツールとデータベース</span></h2><span class="eyebrow">open access</span></div>
+      <p lang="en">Four new resources share one portal, <a href="https://epigen.shinozakilab.net" target="_blank" rel="noopener">epigen.shinozakilab.net</a>, described in our <a href="https://www.biorxiv.org/content/10.64898/2026.10.23.761276v1.full" target="_blank" rel="noopener">2026 preprint</a> with Gen Shinozaki.</p>
+      <p lang="ja">新しい4つのツールは、ポータル <a href="https://epigen.shinozakilab.net" target="_blank" rel="noopener">epigen.shinozakilab.net</a> にまとめて公開しています（篠崎元先生との <a href="https://www.biorxiv.org/content/10.64898/2026.10.23.761276v1.full" target="_blank" rel="noopener">2026年のプレプリント</a>）。</p>
+      <div class="tools">
+        <article class="tool">
+          <div class="t-name">TRACE-CpG <span class="t-new">NEW</span></div>
+          <p lang="en">Predicts brain DNA methylation (pBrain) at BrESS from peripheral samples.</p>
+          <p lang="ja">末梢のサンプルから、BrESS における脳の DNA メチル化（pBrain）を予測するツール。</p>
+          <div class="go"><a href="https://epigen.shinozakilab.net/trace.html" target="_blank" rel="noopener">Open →</a><a href="https://github.com/snishit/TRACE-CpG" target="_blank" rel="noopener">GitHub →</a></div>
+        </article>
+        <article class="tool">
+          <div class="t-name">COMPASS <span class="t-new">NEW</span></div>
+          <p lang="en">Meta-analysis platform for brain–periphery DNA methylation.</p>
+          <p lang="ja">脳と末梢の DNA メチル化のメタ解析プラットフォーム。</p>
+          <div class="go"><a href="https://epigen.shinozakilab.net/compass.html" target="_blank" rel="noopener">Open →</a></div>
+        </article>
+        <article class="tool">
+          <div class="t-name">IMAGE-CpG2 <span class="t-new">NEW</span></div>
+          <p lang="en">Correlation atlas of DNA methylation between brain and peripheral tissues.</p>
+          <p lang="ja">脳と末梢組織の DNA メチル化の相関アトラス。</p>
+          <div class="go"><a href="https://epigen.shinozakilab.net/image2.html" target="_blank" rel="noopener">Open →</a></div>
+        </article>
+        <article class="tool">
+          <div class="t-name">AMAZE-CpG2 <span class="t-new">NEW</span></div>
+          <p lang="en">Atlas of cross-tissue DNA methylation correlations in the live human brain.</p>
+          <p lang="ja">生きたヒトの脳を含む組織間の DNA メチル化相関のアトラス。</p>
+          <div class="go"><a href="https://epigen.shinozakilab.net/amaze2.html" target="_blank" rel="noopener">Open →</a></div>
+        </article>
+      </div>
+      <div class="sub-h"><span lang="en">Earlier tools</span><span lang="ja">これまでのツール</span></div>
+      <div class="tools">
+        <article class="tool">
+          <div class="t-name">AMAZE-CpG</div>
+          <p lang="en">Cross-tissue correlations of genome-wide DNA methylation in the Japanese live human brain and blood, saliva and buccal tissues.</p>
+          <p lang="ja">日本人の生きた脳と、血液・唾液・頬粘膜のゲノム全体のメチル化相関。</p>
+          <div class="t-ref"><i>Translational Psychiatry</i> 2023</div>
+          <div class="go"><a href="https://snishit-amaze-cpg.web.app/" target="_blank" rel="noopener">Open →</a></div>
+        </article>
+        <article class="tool">
+          <div class="t-name">IMAGE-CpG <span style="font-size:.8em;color:var(--ink-2)">mirror</span></div>
+          <p lang="en">Mirror of the IMAGE-CpG brain–blood methylation comparison tool.</p>
+          <p lang="ja">脳と血液のメチル化を比較する IMAGE-CpG のミラー。</p>
+          <div class="go"><a href="https://shinozaki-lab-image-cpg.web.app/" target="_blank" rel="noopener">Open →</a></div>
+        </article>
+        <article class="tool">
+          <div class="t-name">meQED</div>
+          <p lang="en">How well pooled DNA samples on the Infinium MethylationEPIC array reproduce individual measurements.</p>
+          <p lang="ja">Infinium MethylationEPIC アレイで、プールしたサンプルが個別測定をどこまで再現できるか。</p>
+          <div class="t-ref"><i>Clinical Epigenetics</i> 2023</div>
+          <div class="go"><a href="https://datastudio.google.com/u/0/reporting/7f4664a5-0c11-4bbd-ac02-2a9b19eee38b/page/mR7OD" target="_blank" rel="noopener">Open →</a></div>
+        </article>
+        <article class="tool">
+          <div class="t-name">E2 predictor</div>
+          <p lang="en">Predicts 17β-estradiol levels from DNA methylation data.</p>
+          <p lang="ja">DNA メチル化データから 17β-エストラジオールの値を予測。</p>
+          <div class="t-ref"><i>Epigenomics</i> 2024</div>
+          <div class="go"><a href="https://github.com/snishit/Hacks_E2_predictor" target="_blank" rel="noopener">GitHub →</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-pubs">
+      <div class="sec-h"><h2 id="h-pubs"><span lang="en">Publications</span><span lang="ja">論文</span></h2><span class="eyebrow" id="pub-count"></span></div>
+      <div class="sub-h"><span lang="en">Selected</span><span lang="ja">主な論文</span></div>
+      <ol class="pubs" id="sel"></ol>
+      <div class="sub-h"><span lang="en">Preprints</span><span lang="ja">プレプリント</span></div>
+      <ol class="pubs" id="pre"></ol>
+      <details class="all">
+        <summary><span lang="en">All peer-reviewed articles</span><span lang="ja">すべての原著論文</span> (<span id="n-all"></span>)</summary>
+        <ol class="pubs" id="all"></ol>
+      </details>
+      <p class="note"><span lang="en">Source: researchmap. Updated November 2026.</span><span lang="ja">出典：researchmap（2026年11月更新）</span></p>
+    </section>
+
+    <section aria-labelledby="h-news">
+      <div class="sec-h"><h2 id="h-news"><span lang="en">News</span><span lang="ja">お知らせ</span></h2></div>
+      <ul class="news">
+        <li><time datetime="2026-10">2026-10</time><span lang="en">Released TRACE-CpG, COMPASS, IMAGE-CpG2 and AMAZE-CpG2 at <a href="https://epigen.shinozakilab.net" target="_blank" rel="noopener">epigen.shinozakilab.net</a>, with a <a href="https://www.biorxiv.org/content/10.64898/2026.10.23.761276v1.full" target="_blank" rel="noopener">bioRxiv preprint</a>.</span><span lang="ja">TRACE-CpG、COMPASS、IMAGE-CpG2、AMAZE-CpG2 を <a href="https://epigen.shinozakilab.net" target="_blank" rel="noopener">epigen.shinozakilab.net</a> で公開し、<a href="https://www.biorxiv.org/content/10.64898/2026.10.23.761276v1.full" target="_blank" rel="noopener">bioRxiv にプレプリント</a>を投稿しました。</span></li>
+        <li><time datetime="2026-09">2026-09</time><span lang="en">Joined UC Irvine School of Medicine as Associate Project Scientist.</span><span lang="ja">カリフォルニア大学アーバイン校 医学部に准プロジェクトサイエンティストとして着任しました。</span></li>
+        <li><time datetime="2025">2025</time><span lang="en">Multi-epigenome-wide study of child maltreatment published in <i>Molecular Psychiatry</i>.</span><span lang="ja">児童虐待のマルチエピゲノム解析が <i>Molecular Psychiatry</i> に掲載されました。</span></li>
+        <li><time datetime="2025-02">2025-02</time><span lang="en">Joined the Department of Psychiatry and Behavioral Sciences, Stanford University.</span><span lang="ja">スタンフォード大学 医学部 精神医学・行動科学講座に着任しました。</span></li>
+        <li><time datetime="2024-02">2024-02</time><span lang="en">Joined the editorial boards of <i>Biological Psychology</i> (Associate Editor) and <i>Scientific Reports</i>.</span><span lang="ja"><i>Biological Psychology</i>（Associate Editor）と <i>Scientific Reports</i> の編集委員に就任しました。</span></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="h-cv">
+      <div class="sec-h"><h2 id="h-cv">CV</h2></div>
+      <div class="cv">
+        <div>
+          <h3><span lang="en">Positions</span><span lang="ja">職歴</span></h3>
+          <dl>
+            <dt>2026–</dt><dd lang="en">Associate Project Scientist, University of California, Irvine</dd><dd lang="ja">カリフォルニア大学アーバイン校 准プロジェクトサイエンティスト</dd>
+            <dt>2025–2026</dt><dd lang="en">Basic Life Research Scientist, Stanford University</dd><dd lang="ja">スタンフォード大学 基礎生命科学研究員</dd>
+            <dt>2024–2025</dt><dd lang="en">Assistant Professor, University of Yamanashi</dd><dd lang="ja">山梨大学 医学部 研究助教</dd>
+            <dt>2024</dt><dd lang="en">Section Chief, Department of Pathology of Mental Diseases, National Center of Neurology and Psychiatry</dd><dd lang="ja">国立精神・神経医療研究センター 精神疾患病態研究部 室長</dd>
+            <dt>2019–2024</dt><dd lang="en">Assistant Professor, then Associate Professor / Lecturer, Research Center for Child Mental Development, University of Fukui</dd><dd lang="ja">福井大学 子どものこころの発達研究センター 特命助教、特命講師</dd>
+            <dt>2015–2019</dt><dd lang="en">Visiting Assistant Professor, Emory University School of Medicine</dd><dd lang="ja">エモリー大学 医学部 客員助教</dd>
+            <dt>2006–2017</dt><dd lang="en">Assistant Professor, Neurobiology and Behavior, Nagasaki University Graduate School of Biomedical Sciences</dd><dd lang="ja">長崎大学大学院 医歯薬学総合研究科 神経機能学 助手・助教</dd>
+          </dl>
+        </div>
+        <div class="stack">
+          <div>
+            <h3><span lang="en">Education</span><span lang="ja">学歴</span></h3>
+            <dl>
+              <dt>2009</dt><dd lang="en">PhD (Medicine), Nagasaki University</dd><dd lang="ja">長崎大学大学院 医歯薬学総合研究科 博士（医学）</dd>
+              <dt>2003</dt><dd lang="en">MSc (Medical Science), Yokohama City University</dd><dd lang="ja">横浜市立大学大学院 医学研究科 修士（医科学）</dd>
+              <dt>2001</dt><dd lang="en">BEng, Industrial Chemistry, Seikei University</dd><dd lang="ja">成蹊大学 工学部 工業化学科</dd>
+            </dl>
+          </div>
+          <div>
+            <h3><span lang="en">Editorial</span><span lang="ja">編集委員</span></h3>
+            <dl>
+              <dt>2024–</dt><dd>Associate Editor, <i>Biological Psychology</i></dd>
+              <dt>2024–</dt><dd>Editorial Board Member, <i>Scientific Reports</i></dd>
+            </dl>
+          </div>
+          <div>
+            <h3><span lang="en">Awards</span><span lang="ja">受賞</span></h3>
+            <dl>
+              <dt>2021</dt><dd lang="en">Dean's Award for Excellence, University of Fukui School of Medical Sciences</dd><dd lang="ja">福井大学 医学系部門長奨励賞</dd>
+              <dt>2016</dt><dd lang="en">Top Poster Award Finalist, Society of Biological Psychiatry</dd><dd lang="ja">米国生物学的精神医学会 Top Poster Award ファイナリスト</dd>
+              <dt>2008</dt><dd lang="en">Young Scientist Award, 2nd WFSBP Asia-Pacific Congress</dd><dd lang="ja">第2回 WFSBP アジア太平洋会議 若手科学者賞</dd>
+              <dt>2006</dt><dd lang="en">Top Poster Award, Japanese Society of Biological Psychiatry</dd><dd lang="ja">日本生物学的精神医学会 優秀演題賞</dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span lang="en">© Shota Nishitani</span><span lang="ja">© 西谷 正太</span>
+    </footer>
+  </main>
+</div>
+
+<script id="pubdata" type="application/json">{"articles":[{"year":2026,"title":"Neuroinflammation as molecular landscape of post-operative delirium revealed by live human brain multi-omics profiling","journal_disp":"Molecular Psychiatry","doi":"10.1038/s41380-026-03804-z","authors":["Takaya Ishii","Tao Wang","Kazuki Shibata","Shota Nishitani","Takehiko Yamanashi","Nadia E Wahba","Tomoteru Seki","Kaitlyn J Thompson","Kyosuke Yamanishi","Tsuyoshi Nishiguchi","Akiyoshi Shimura","Bun Aoyama","Nipun Gorantla","Nathan J Phuong","Hieu D Nguyen","Therese A Santiago","Yoshitaka Nishizawa","Takaaki Nagao","Mathew A Howard","Hiroto Kawasaki","Kyosuke Hino","Atsushi Ikeda","Michael P Snyder","Gen Shinozaki"],"pos":4,"n":24,"role":""},{"year":2026,"title":"Non-linear age-related change in human Interleukin-11 and the receptor subunit alpha DNA methylation","journal_disp":"Biochemistry and Biophysics Reports","doi":"10.1016/j.bbrep.2026.102546","authors":["Shimura, Akiyoshi","Dwaraka, Varun B.","Yamanishi, Kyosuke","Seki, Tomoteru","Nishiguchi, Tsuyoshi","Aoyama, Bun","Ishii, Takaya","Phuong, Nathan James","Gorantla, Nipun","Nguyen, Hieu Dinh","Santiago, Therese","Nishitani, Shota","Smith, Ryan","Shinozaki, Gen"],"pos":12,"n":14,"role":""},{"year":2026,"title":"Postoperative delirium in hip fracture patients linked to epigenetic alterations in inflammatory and immune pathways: a genome-wide DNA methylation study","journal_disp":"Translational Psychiatry","doi":"10.1038/s41398-026-04067-6","authors":["Tomoteru Seki","Shota Nishitani","Yoshitaka Nishizawa","Kyosuke Yamanishi","Akiyoshi Shimura","Tsuyoshi Nishiguchi","Takaya Ishii","Bun Aoyama","Therese Anne Santiago","Nathan James Phuong","Nipun Gorantla","Hieu Dinh Nguyen","Ryo Takeda","Takashi Kameoka","Takeshi Inoue","Daisuke Sugiyama","Kenichi Ueda","Takehiko Yamanashi","Gen Shinozaki"],"pos":2,"n":19,"role":""},{"year":2025,"title":"Assessing childhood maltreatment exposure using the child behavior checklist","journal_disp":"Frontiers in Child and Adolescent Psychiatry","doi":"10.3389/frcha.2025.1493432","authors":["Makino, Takuya","Nishitani, Shota","Takiguchi, Shinichiro","Yao, Akiko","Fujisawa, Takashi X.","Tomoda, Akemi"],"pos":2,"n":6,"role":"Corresponding author"},{"year":2025,"title":"Behavioral and emotional difficulties in maltreated children: Associations with epigenetic clock changes and visual attention to social cues","journal_disp":"PLOS One","doi":"10.1371/journal.pone.0321952","authors":["Keiko Ochiai","Shota Nishitani","Akiko Yao","Daiki Hiraoka","Natasha Y.S. Kawata","Shizuka Suzuki","Takashi X. Fujisawa","Akemi Tomoda"],"pos":2,"n":8,"role":"Corresponding author"},{"year":2025,"title":"Effects of childhood maltreatment on mothers' empathy and parenting styles in intergenerational transmission","journal_disp":"Scientific Reports","doi":"10.1038/s41598-025-92804-0","authors":["Yuko Kawaguchi","Sawa Kurata","Natasha Y S Kawata","Akiko Yao","Shota Nishitani","Takashi X Fujisawa","Akemi Tomoda"],"pos":5,"n":7,"role":""},{"year":2025,"title":"Multi-epigenome-wide analyses and meta-analysis of child maltreatment in judicial autopsies and intervened children and adolescents","journal_disp":"Molecular Psychiatry","doi":"10.1038/s41380-025-03236-1","authors":["Shota Nishitani","Takashi X Fujisawa","Shinichiro Takiguchi","Akiko Yao","Kazuhiro Murata","Daiki Hiraoka","Yoshifumi Mizuno","Keiko Ochiai","Natasha Y S Kawata","Kai Makita","Daisuke N Saito","Sakae Mizushima","Shizuka Suzuki","Sawa Kurata","Naoki Ishiuchi","Daiki Taniyama","Naoki Nakao","Akira Namera","Hidehiko Okazawa","Masataka Nagao","Akemi Tomoda"],"pos":1,"n":21,"role":"First & corresponding author"},{"year":2025,"title":"Random forest and Shapley Additive exPlanations predict oxytocin targeted effects on brain functional networks involved in salience and sensorimotor processing, in a randomized clinical trial in autism","journal_disp":"Neuropsychopharmacology","doi":"10.1038/s41386-025-02095-2","authors":["Elissar Andari","Kaundinya Gopinath","Erin O’Leary","Gabriella A. Caceres","Shota Nishitani","Alicia K. Smith","Opal Ousley","James K. Rilling","Joseph F. Cubells","Larry J. Young"],"pos":5,"n":10,"role":""},{"year":2024,"title":"Brain structures and functional connectivity in neglected children with no other types of maltreatment","journal_disp":"NeuroImage","doi":"10.1016/j.neuroimage.2024.120589","authors":["Natasha Y S Kawata","Shota Nishitani","Akiko Yao","Shinichiro Takiguchi","Yoshifumi Mizuno","Sakae Mizushima","Kai Makita","Shoko Hamamura","Daisuke N Saito","Hidehiko Okazawa","Takashi X Fujisawa","Akemi Tomoda"],"pos":2,"n":12,"role":"Corresponding author"},{"year":2024,"title":"Data science using the human epigenome for predicting multifactorial diseases and symptoms","journal_disp":"Epigenomics","doi":"10.2217/epi-2023-0321","authors":["Nishitani, Shota","Smith, Alicia K.","Tomoda, Akemi","Fujisawa, Takashi X."],"pos":1,"n":4,"role":"First & corresponding author"},{"year":2024,"title":"Diffusion tensor imaging of white-matter structural features of maltreating mothers and their associations with intergenerational chain of childhood abuse","journal_disp":"Scientific Reports","doi":"10.1038/s41598-024-53666-0","authors":["Sawa Kurata","Shota Nishitani","Natasha Y S Kawata","Akiko Yao","Takashi X Fujisawa","Hidehiko Okazawa","Akemi Tomoda"],"pos":2,"n":7,"role":"Corresponding author"},{"year":2024,"title":"Subclinical structural atypicality of retinal thickness and its association with gray matter volume in the visual cortex of maltreated children","journal_disp":"Scientific Reports","doi":"10.1038/s41598-024-62392-6","authors":["Akiko Yao","Shota Nishitani","Yutaka Yamada","Hideyuki Oshima","Yuka Sugihara","Kai Makita","Shinichiro Takiguchi","Natasha Y. S. Kawata","Takashi X. Fujisawa","Hidehiko Okazawa","Masaru Inatani","Akemi Tomoda"],"pos":2,"n":12,"role":"Corresponding author"},{"year":2024,"title":"The neurobiological effects of childhood maltreatment on brain structure, function, and attachment","journal_disp":"European Archives of Psychiatry and Clinical Neuroscience","doi":"10.1007/s00406-024-01779-y","authors":["Akemi Tomoda","Shota Nishitani","Shinichiro Takiguchi","Takashi X Fujisawa","Toshiro Sugiyama","Martin H Teicher"],"pos":2,"n":6,"role":""},{"year":2023,"title":"Child Developmental MRI (CDM) project: protocol for a multi-centre, cross-sectional study on elucidating the pathophysiology of attention-deficit/hyperactivity disorder and autism spectrum disorder through a multi-dimensional approach","journal_disp":"BMJ Open","doi":"10.1136/bmjopen-2022-070157","authors":["Masatoshi Yamashita","Kuriko Kagitani-Shimono","Yoshiyuki Hirano","Sayo Hamatani","Shota Nishitani","Akiko Yao","Sawa Kurata","Hirotaka Kosaka","Minyoung Jung","Tokiko Yoshida","Tsuyoshi Sasaki","Koji Matsumoto","Yoko Kato","Mariko Nakanishi","Masaya Tachibana","Ikuko Mohri","Kenji J Tsuchiya","Tetsuya Tsujikawa","Hidehiko Okazawa","Eiji Shimizu","Masako Taniike","Akemi Tomoda","Yoshifumi Mizuno"],"pos":5,"n":23,"role":""},{"year":2023,"title":"Cross-tissue correlations of genome-wide DNA methylation in Japanese live human brain and blood, saliva, and buccal epithelial tissues","journal_disp":"Translational Psychiatry","doi":"10.1038/s41398-023-02370-0","authors":["Shota Nishitani","Makoto Isozaki","Akiko Yao","Yoshifumi Higashino","Takahiro Yamauchi","Masamune Kidoguchi","Satoshi Kawajiri","Kenzo Tsunetoshi","Hiroyuki Neish","Hirochika Imoto","Hidetaka Arishima","Toshiaki Kodera","Takashi X Fujisawa","Sadahiro Nomura","Kenichiro Kikuta","Gen Shinozaki","Akemi Tomoda"],"pos":1,"n":17,"role":"First & corresponding author"},{"year":2023,"title":"Evaluation of the pooled sample method in Infinium MethylationEPIC BeadChip array by comparison with individual samples","journal_disp":"Clinical Epigenetics","doi":"10.1186/s13148-023-01544-3","authors":["Shota Nishitani","Takashi X Fujisawa","Akiko Yao","Shinichiro Takiguchi","Akemi Tomoda"],"pos":1,"n":5,"role":"First & corresponding author"},{"year":2023,"title":"Validity and reliability of the Japanese versions of the coronavirus anxiety scale for adolescents and obsession with COVID-19 scale for adolescents","journal_disp":"PeerJ","doi":"10.7717/peerj.15710","authors":["Takuya Makino","Sohei Ide","Tomoko Shiino","Daiki Hiraoka","Saeko Ishibashi","Futoshi Suzuki","Shota Nishitani"],"pos":7,"n":7,"role":"Senior author"},{"year":2022,"title":"Effects of intranasal oxytocin on neural reward processing in children and adolescents with reactive attachment disorder: A randomized controlled trial","journal_disp":"Frontiers in Child and Adolescent Psychiatry","doi":"10.3389/frcha.2022.1056115","authors":["Takiguchi, Shinichiro","Makita, Kai","Fujisawa, Takashi X.","Nishitani, Shota","Tomoda, Akemi"],"pos":4,"n":5,"role":""},{"year":2022,"title":"Endogenous oxytocin levels in extracted saliva elevates during breastfeeding correlated with lower postpartum anxiety in primiparous mothers","journal_disp":"BMC Pregnancy and Childbirth","doi":"10.1186/s12884-022-05026-x","authors":["Miyuki Nagahashi-Araki","Makoto Tasaka","Tsunehiko Takamura","Hiromi Eto","Noriko Sasaki","Wakako Fujita","Asuka Miyazaki","Kanako Morifuji","Naoko Honda","Tunetake Miyamura","Shota Nishitani"],"pos":11,"n":11,"role":"Senior & corresponding author"},{"year":2022,"title":"Epigenetic Clock Deceleration and Maternal Reproductive Efforts: Associations With Increasing Gray Matter Volume of the Precuneus","journal_disp":"Frontiers in Genetics","doi":"10.3389/fgene.2022.803584","authors":["Shota Nishitani","Ryoko Kasaba","Daiki Hiraoka","Koji Shimada","Takashi X Fujisawa","Hidehiko Okazawa","Akemi Tomoda"],"pos":1,"n":7,"role":"First & corresponding author"},{"year":2022,"title":"The effects of epigenetic age and its acceleration on surface area, cortical thickness, and volume in young adults","journal_disp":"Cerebral Cortex","doi":"10.1093/cercor/bhac043","authors":["Yongjeon Cheong","Shota Nishitani","Jinyoung Yu","Kaie Habata","Taku Kamiya","Daichi Shiotsu","Ichiro M Omori","Hidehiko Okazawa","Akemi Tomoda","Hirotaka Kosaka","Minyoung Jung"],"pos":2,"n":11,"role":""},{"year":2021,"title":"A multi-modal MRI analysis of brain structure and function in relation to OXT methylation in maltreated children and adolescents","journal_disp":"Translational Psychiatry","doi":"10.1038/s41398-021-01714-y","authors":["Shota Nishitani","Takashi X Fujisawa","Daiki Hiraoka","Kai Makita","Shinichiro Takiguchi","Shoko Hamamura","Akiko Yao","Koji Shimada","Alicia K Smith","Akemi Tomoda"],"pos":1,"n":10,"role":"First author"},{"year":2021,"title":"Altered epigenetic clock in children exposed to maltreatment","journal_disp":"Psychiatry and Clinical Neurosciences","doi":"10.1111/pcn.13183","authors":["Shota Nishitani","Shizuka Suzuki","Keiko Ochiai","Akiko Yao","Toru Fujioka","Takashi X. Fujisawa","Akemi Tomoda"],"pos":1,"n":7,"role":"First author"},{"year":2021,"title":"Association of Epigenetic Differences Screened in a Few Cases of Monozygotic Twins Discordant for Attention-Deficit Hyperactivity Disorder With Brain Structures","journal_disp":"Frontiers in Neuroscience","doi":"10.3389/fnins.2021.799761","authors":["Takashi X Fujisawa","Shota Nishitani","Kai Makita","Akiko Yao","Shinichiro Takiguchi","Shoko Hamamura","Koji Shimada","Hidehiko Okazawa","Hideo Matsuzaki","Akemi Tomoda"],"pos":2,"n":10,"role":""},{"year":2021,"title":"Epigenetic prediction of 17β-estradiol and relationship to trauma-related outcomes in women","journal_disp":"Comprehensive Psychoneuroendocrinology","doi":"10.1016/j.cpnec.2021.100045","authors":["Hack M Laura","Nishitani Shota","Knight K Anna","Kilaru Varun","Maddox A Stephanie","Seligowski V Antonia","Jovanovic Tanja","Ressler J Kerry","Smith K Alicia","Michopoulous Vasiliki"],"pos":2,"n":10,"role":""},{"year":2021,"title":"Influence of the COVID-19 Pandemic on Parenting Stress Across Asian Countries: A Cross-National Study","journal_disp":"Frontiers in Psychology","doi":"10.3389/fpsyg.2021.782298","authors":["Sawa Kurata","Daiki Hiraoka","Aida Syarinaz Ahmad Adlan","Subhashini Jayanath","Norhamizan Hamzah","Aishah Ahmad-Fauzi","Takashi X Fujisawa","Shota Nishitani","Akemi Tomoda"],"pos":8,"n":9,"role":"Corresponding author"},{"year":2021,"title":"Mismatch negativity of preschool children at risk of developing mental health problems","journal_disp":"Neuropsychopharmacology Reports","doi":"10.1002/npr2.12168","authors":["Toshiya Aoi","Takashi X Fujisawa","Shota Nishitani","Akemi Tomoda"],"pos":3,"n":4,"role":""},{"year":2021,"title":"Pathways linking adverse environments to emerging adults' substance abuse and depressive symptoms: A prospective analysis of rural African American men","journal_disp":"Development and Psychopathology","doi":"10.1017/s0954579420000632","authors":["Kogan, Steven M.","Bae, Dayoung","Cho, Junhan","Smith, Alicia K.","Nishitani, Shota"],"pos":5,"n":5,"role":"Senior author"},{"year":2020,"title":"Epigenetic modification of the oxytocin receptor gene: implications for autism symptom severity and brain functional connectivity","journal_disp":"Neuropsychopharmacology","doi":"10.1038/s41386-020-0610-6","authors":["Andari, Elissar","Nishitani, Shota","Kaundinya, Gopinath","Caceres, Gabriella A.","Morrier, Michael J.","Ousley, Opal","Smith, Alicia K.","Cubells, Joseph F.","Young, Larry J."],"pos":2,"n":9,"role":""},{"year":2020,"title":"Methylation of OXT and OXTR genes, central oxytocin, and social behavior in female macaques","journal_disp":"Hormones and Behavior","doi":"10.1016/j.yhbeh.2020.104856","authors":["De Leon, Desiree","Nishitani, Shota","Walum, Hasse","McCormack, Kai M.","Wilson, Mark E.","Smith, Alicia K.","Young, Larry J.","Sanchez, Mar M."],"pos":2,"n":8,"role":""},{"year":2020,"title":"OXTR methylation modulates exogenous oxytocin effects on human brain activity during social interaction","journal_disp":"Genes, Brain and Behavior","doi":"10.1111/gbb.12555","authors":["Chen, Xu","Nishitani, Shota","Haroon, Ebrahim","Smith, Alicia K.","Rilling, James K."],"pos":2,"n":5,"role":""},{"year":2019,"title":"Childhood Adversity, Socioeconomic Instability, Oxytocin-Receptor-Gene Methylation, and Romantic-Relationship Support Among Young African American Men","journal_disp":"Psychological Science","doi":"10.1177/0956797619854735","authors":["Shota Nishitani"],"pos":5,"n":5,"role":"Senior author"},{"year":2019,"title":"Oxytocin receptor DNA methylation and alterations of brain volumes in maltreated children","journal_disp":"Neuropsychopharmacology","doi":"10.1038/s41386-019-0414-8","authors":["Takashi X Fujisawa","Shota Nishitani","Shinichiro Takiguchi","Koji Shimada","Alicia K Smith","Akemi Tomoda"],"pos":2,"n":6,"role":"Co-first author"},{"year":2018,"title":"DNA methylation analysis from saliva samples for epidemiological studies","journal_disp":"Epigenetics","doi":"10.1080/15592294.2018.1461295","authors":["Nishitani, Shota","Parets, Sasha E.","Haas, Brian W.","Smith, Alicia K."],"pos":1,"n":4,"role":"First author"},{"year":2018,"title":"Epigenetic Modification ofOXTRis Associated with Openness to Experience","journal_disp":"Personality Neuroscience","doi":"10.1017/pen.2018.7","authors":["Haas, Brian W.","Smith, Alicia K.","Nishitani, Shota"],"pos":3,"n":3,"role":"Senior author"},{"year":2018,"title":"Oxytocin receptor gene methylation and substance use problems among young African American men","journal_disp":"Drug and Alcohol Dependence","doi":"10.1016/j.drugalcdep.2018.08.022","authors":["Kogan, Steven M.","Cho, Junhan","Beach, Steven R. H.","Smith, Alicia K.","Nishitani, Shota"],"pos":5,"n":5,"role":"Senior author"},{"year":2017,"title":"Genetic variants in oxytocin receptor and arginine-vasopressin receptor 1A are associated with the neural correlates of maternal and paternal affection towards their child","journal_disp":"Hormones and Behavior","doi":"10.1016/j.yhbeh.2016.09.010","authors":["Shota Nishitani","Kazuya Ikematsu","Tsunehiko Takamura","Sumihisa Honda","Koh-ichiro Yoshiura","Kazuyuki Shinohara"],"pos":1,"n":6,"role":"First author"},{"year":2017,"title":"Non-linear patterns in age-related DNA methylation may reflect CD4(+) T cell differentiation","journal_disp":"Epigenetics","doi":"10.1080/15592294.2017.1314419","authors":["Nicholas D. Johnson","Howard W. Wiener","Alicia K. Smith","Shota Nishitani","Devin M. Absher","Donna K. Arnett","Stella Aslibekyan","Karen N. Conneely"],"pos":4,"n":8,"role":""},{"year":2017,"title":"Oxytocin Mediates a Calming Effect on Postpartum Mood in Primiparous Mothers","journal_disp":"Breastfeeding Medicine","doi":"10.1089/bfm.2016.0052","authors":["Risa Niwayama","Shota Nishitani","Tsunehiko Takamura","Kazuyuki Shinohara","Sumihisa Honda","Tsunetake Miyamura","Yuko Nakao","Kazuyo Oishi","Miyuki Araki-Nagahashi"],"pos":2,"n":9,"role":"Co-first author"},{"year":2016,"title":"Association of aryl hydrocarbon receptor-related gene variants with the severity of autism spectrum disorders","journal_disp":"Frontiers in Psychiatry","doi":"10.3389/fpsyt.2016.00184","authors":["Fujisawa TX","Nishitani S","Iwanaga R","Matsuzaki J","Kawasaki C","Tochigi M","Sasaki T","Kato N","Shinohara K"],"pos":2,"n":9,"role":""},{"year":2016,"title":"Association of estrogen receptor alpha polymorphisms with symptoms of autism among Chinese Han children","journal_disp":"Neuroendocrinology Letters","doi":"","authors":["Wang, Xuelai","Liang, Shuang","Fujisawa, Takashi X.","Nishitani, Shota","Tomoda, Akemi","Zou, Mingyang","Li, Yang","Wu, Lijie","Shinohara, Kazuyuki"],"pos":4,"n":9,"role":""},{"year":2016,"title":"Epigenetic modification of OXT and human sociability","journal_disp":"PNAS","doi":"10.1073/pnas.1602809113","authors":["Haas, Brian W.","Filkowski, Megan M.","Cochran, R. Nick","Denison, Lydia","Ishak, Alexandra","Nishitani, Shota","Smith, Alicia K."],"pos":6,"n":7,"role":""},{"year":2016,"title":"Possible neural correlate of young child attachment to mother in 4 to 5 year olds","journal_disp":"Acta Medica Nagasakiensia","doi":"10.11343/amn.60.45","authors":["TAKAMURA Tsunehiko","NISHITANI Shota","DOI Hirokazu","SHINOHARA Kazuyuki"],"pos":2,"n":4,"role":""},{"year":2015,"title":"Association between catechol-O-methyltransferase Val158Met polymorphism and configural mode of face processing","journal_disp":"Neuroscience Letters","doi":"10.1016/j.neulet.2014.12.001","authors":["Doi, Hirokazu","Nishitani, Shota","Shinohara, Kazuyuki"],"pos":2,"n":3,"role":""},{"year":2015,"title":"Developmental changes in the neural responses to own and unfamiliar mother's smiling face throughout puberty","journal_disp":"Frontiers in Neuroscience","doi":"10.3389/fnins.2015.00200","authors":["Tsunehiko Takamura","Shota Nishitani","Takashi Suegami","Hirokazu Doi","Masaki Kakeyama","Kazuyuki Shinohara"],"pos":2,"n":6,"role":""},{"year":2015,"title":"Sex difference in the relationship between salivary testosterone and inter-temporal choice","journal_disp":"Hormones and Behavior","doi":"10.1016/j.yhbeh.2014.12.005","authors":["Hirokazu Doi","Shota Nishitani","Kazuyuki Shinohara"],"pos":2,"n":3,"role":""},{"year":2014,"title":"I love my grandkid! An NIRS study of grandmaternal love in Japan","journal_disp":"Brain Research","doi":"10.1016/j.brainres.2013.10.028","authors":["Tetsuo Kida","Shota Nishitani","Masanori Tanaka","Tsunehiko Takamura","Masashi Sugawara","Kazuyuki Shinohara"],"pos":2,"n":6,"role":""},{"year":2014,"title":"Maternal Prefrontal Cortex Activation by Newborn Infant Odors","journal_disp":"Chemical Senses","doi":"10.1093/chemse/bjt068","authors":["Shota Nishitani","Saori Kuwamoto","Asuka Takahira","Tsunetake Miyamura","Kazuyuki Shinohara"],"pos":1,"n":5,"role":"First author"},{"year":2014,"title":"No association between catechol-O-methyltransferase (COMT) genotype and attention deficit hyperactivity disorder (ADHD) in Japanese children","journal_disp":"Brain & Development","doi":"10.1016/j.braindev.2013.08.006","authors":["Yatsuga C","Toyohisa D","Fujisawa TX","Nishitani S","Shinohara K","Matsuura N","Ikeda S","Muramatsu M","Hamada A","Tomoda A"],"pos":4,"n":10,"role":""},{"year":2013,"title":"No interaction between serotonin transporter gene (5-HTTLPR) polymorphism and adversity on depression among Japanese children and adolescents","journal_disp":"BMC Psychiatry","doi":"10.1186/1471-244x-13-134","authors":["Tomoda A","Nishitani S","Matsuura N","Fujisawa TX","Kawatani J","Toyohisa D","Ono M","Shinohara K"],"pos":2,"n":8,"role":""},{"year":2013,"title":"Phosphorylation of cAMP response element-binding protein in the extended amygdala of male rats is induced by novel environment and attenuated by estrous female-bedding","journal_disp":"Neuroendocrinology Letters","doi":"","authors":["Shota Nishitani","Toshiya Funabashi","Kazuyuki Shinohara","Fukuko Kimura"],"pos":1,"n":4,"role":"First author"},{"year":2012,"title":"Loneliness depends on salivary estradiol levels in adolescent females","journal_disp":"Activitas Nervosa Superior Rediviva","doi":"","authors":["Takashi X. Fujisawa","Shota Nishitani","Tatsuro Obara","Kazuyuki Shinohara"],"pos":2,"n":4,"role":""},{"year":2012,"title":"Perceived parental rejection mediates the influence of serotonin transporter gene (5-HTTLPR) polymorphisms on impulsivity in Japanese adults","journal_disp":"PLOS One","doi":"10.1371/journal.pone.0047608","authors":["Nishikawa S","Nishitani S","Fujisawa TX","Noborimoto I","Kitahara T","Takamura T","Shinohara K"],"pos":2,"n":7,"role":""},{"year":2011,"title":"Development of synchrony between activity patterns of mother-infant pair from 4 to 18 months after birth","journal_disp":"Journal of Physiological Sciences","doi":"10.1007/s12576-011-0138-y","authors":["Hirokazu Doi","Mikako Kato","Shota Nishitani","Kazuyuki Shinohara"],"pos":3,"n":4,"role":""},{"year":2011,"title":"Differential modulation of impulsive behavior by loneliness and testosterone in adolescent females","journal_disp":"Neuroendocrinology Letters","doi":"","authors":["Fujisawa, Takashi X.","Nishitani, Shota","Ishii, Satoshi","Shinohara, Kazuyuki"],"pos":2,"n":4,"role":""},{"year":2011,"title":"Differential prefrontal response to infant facial emotions in mothers compared with non-mothers","journal_disp":"Neuroscience Research","doi":"10.1016/j.neures.2011.02.007","authors":["Shota Nishitani","Hirokazu Doi","Atsuko Koyama","Kazuyuki Shinohara"],"pos":1,"n":4,"role":"First author"},{"year":2009,"title":"The calming effect of a maternal breast milk odor on the human newborn infant","journal_disp":"Neuroscience Research","doi":"10.1016/j.neures.2008.10.007","authors":["Shota Nishitani","Tsunetake Miyamura","Masato Tagawa","Muneichiro Sumi","Ryuta Takase","Hirokazu Doi","Hiroyuki Moriuchi","Kazuyuki Shinohara"],"pos":1,"n":8,"role":"First author"},{"year":2008,"title":"The olfactory conditioning in the early postnatal period stimulated neural stem/progenitor cells in the subventricular zone and increased neurogenesis in the olfactory bulb of rats","journal_disp":"Neuroscience","doi":"10.1016/j.neuroscience.2007.07.051","authors":["K. So","T. Moriya","S. Nishitani","H. Takahashi","K. Shinohara"],"pos":3,"n":5,"role":""},{"year":2004,"title":"Induction of Fos immunoreactivity in oxytocin neurons in the paraventricular nucleus after female odor exposure in male rats: effects of sexual experience","journal_disp":"Cellular and Molecular Neurobiology","doi":"","authors":["Shota Nishitani","Takahiro Moriya","Yasuhiko Kondo","Yasuo Sakuma","Kazuyuki Shinohara"],"pos":1,"n":5,"role":"First author"}],"preprints":[{"year":2026,"title":"A genome-wide catalog of sites where peripheral DNA methylation reflects the brain","doi":"10.64898/2026.10.23.761276","authors":["Shota Nishitani","Shizhong Han","Takaya Ishii","Akiyoshi Shimura","Nathan J. Phuong","Asahi Kato","Meagan Chambers","Tao Wang","Makoto Isozaki","Yoshifumi Higashino","Takahiro Yamauchi","Satoshi Kawajiri","Hidetaka Arishima","Toshiaki Kodera","Hirochika Imoto","Sadahiro Nomura","Kyosuke Yamanishi","Bun Aoyama","Ilgin Genc","Rika Sakuma","Hieu D. Nguyen","Nipun Gorantla","Elnaz Ghasemi","Akiko Yao","Sawa Kurata","Takashi X. Fujisawa","Patricia R. Braun","Takaaki Nagao","Takehiko Yamanashi","Akemi Tomoda","Kenichiro Kikuta","Tadao Ooka","Gerald A. Grant","Jody E. Hooper","Matthew A. Howard, III","Hiroto Kawasaki","James B. Potash","Michael P. Snyder","Gen Shinozaki"]},{"year":2026,"title":"Neuroimmune signatures linking inflammatory proteomics to temporal cortical structure in mothers who perpetrated child maltreatment","doi":"10.64898/2026.07.12.26357844","authors":["Sawa Kurata","Shota Nishitani","Natasha Y.S. Kawata","Akiko Yao","Ryoko Kasaba","Ryo Kuboshita","Saori Nishikawa","Takeshi Morimoto","Yasutaka Fushimi","Hidehiko Okazawa","Takashi X. Fujisawa","Akemi Tomoda"]},{"year":2026,"title":"Generating Biologically Relevant Subtypes of Autism Spectrum Disorder with differential responses to Acute Oxytocin Administration in a Randomized Trial using Random Forest Models and K-means Clustering.","doi":"10.64898/2026.02.10.26346006","authors":["Christopher D Vento","Jolee Hatfield-King","Kaundinya Gopinath","Shota Nishitani","Michael Morrier","Opal Ousley","Joseph F Cubells","Larry J Young","Elissar Andari"]},{"year":2025,"title":"Glial Contribution to the Pathogenesis of Post-Operative Delirium Revealed by Multi-omic Analysis of Brain Tissue from Neurosurgery Patients.","doi":"10.1101/2025.03.13.643155","authors":["Takaya Ishii","Tao Wang","Kazuki Shibata","Shota Nishitani","Takehiko Yamanashi","Nadia E Wahba","Tomoteru Seki","Kaitlyn J Thompson","Kyosuke Yamanishi","Tsuyoshi Nishiguchi","Akiyoshi Shimura","Bun Aoyama","Nipun Gorantla","Nathan J Phuong","Hieu D Nguyen","Therese A Santiago","Yoshitaka Nishizawa","Takaaki Nagao","Mathew A Howard","Hiroto Kawasaki","Kyosuke Hino","Atsushi Ikeda","Michael P Snyder","Gen Shinozaki"]}]}</script>
+<script>
+const root = document.documentElement;
+function setLang(l){
+  root.setAttribute("data-lang", l); root.setAttribute("lang", l);
+  document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.l === l)));
+  try{ localStorage.setItem("lang", l); }catch(e){}
+}
+let initial = "en";
+try{ initial = localStorage.getItem("lang") || ((navigator.language || "").startsWith("ja") ? "ja" : "en"); }catch(e){}
+setLang(initial);
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.l)));
+
+// CpG strip (illustration)
+(function(){
+  const pattern = [1,1,0,1,1,1,0,1,0,1,1,1,1,0,1,1,0,1,1,1,0,1];
+  const g = document.getElementById("cpgs"), ns = "http://www.w3.org/2000/svg";
+  const n = pattern.length, x0 = 14, x1 = 316, step = (x1 - x0) / (n - 1);
+  pattern.forEach((m, i) => {
+    const x = x0 + i * step;
+    const s = document.createElementNS(ns, "line");
+    s.setAttribute("x1", x); s.setAttribute("x2", x); s.setAttribute("y1", 40); s.setAttribute("y2", 22);
+    s.setAttribute("stroke", "var(--unmethyl)"); s.setAttribute("stroke-width", "1.5");
+    const c = document.createElementNS(ns, "circle");
+    c.setAttribute("cx", x); c.setAttribute("cy", 16); c.setAttribute("r", 5.5);
+    c.setAttribute("stroke", m ? "var(--methyl)" : "var(--unmethyl)"); c.setAttribute("stroke-width", "1.5");
+    c.setAttribute("fill", m ? "var(--methyl)" : "var(--bg)");
+    g.appendChild(s); g.appendChild(c);
+  });
+})();
+
+// publications
+const D = JSON.parse(document.getElementById("pubdata").textContent);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const isMe = n => /nishitani/i.test(n) || /西谷/.test(n);
+function authors(list, n){
+  if(!list || !list.length) return "";
+  list = list.map(x => /^[^,]+,\s*[^,]+$/.test(x) ? x.split(/,\s*/).reverse().join(" ") : x);
+  if(n && list.length < n) return `${n} authors, including <b>Shota Nishitani</b>`;
+  const show = list.length <= 8 ? list.map((a,i)=>i) : (() => {
+    const keep = new Set([0,1,2,list.length-1]); const me = list.findIndex(isMe); if(me>=0) keep.add(me);
+    return [...keep].sort((a,b)=>a-b);
+  })();
+  let out = [], prev = -1;
+  for(const i of show){ if(i - prev > 1) out.push("…"); out.push(isMe(list[i]) ? `<b>${esc(list[i])}</b>` : esc(list[i])); prev = i; }
+  return out.join(", ");
+}
+function pub(a, pre){
+  const link = a.doi ? `<a href="https://doi.org/${esc(a.doi)}" target="_blank" rel="noopener">${esc(a.title)}</a>` : esc(a.title);
+  const meta = pre ? `<i>Preprint</i>` : `<i>${esc(a.journal_disp)}</i>`;
+  const badge = a.role ? `<span class="badge">${esc(a.role)}</span>` : "";
+  return `<li class="pub"><span class="yr">${a.year}</span><div><div class="ti">${link}</div>
+    <div class="au">${authors(a.authors, a.n)}</div><div class="meta">${meta}${badge}</div></div></li>`;
+}
+const SELECTED = ["10.1038/s41380-025-03236-1","10.1016/j.neuroimage.2024.120589","10.2217/epi-2023-0321","10.1038/s41398-023-02370-0",
+  "10.1186/s13148-023-01544-3","10.1038/s41398-021-01714-y","10.1111/pcn.13183","10.1038/s41386-019-0414-8","10.1177/0956797619854735"];
+const byDoi = Object.fromEntries(D.articles.map(a => [a.doi, a]));
+document.getElementById("sel").innerHTML = SELECTED.map(d => byDoi[d]).filter(Boolean).map(a => pub(a)).join("");
+document.getElementById("pre").innerHTML = D.preprints.map(p => pub(p, true)).join("");
+document.getElementById("all").innerHTML = D.articles.map(a => pub(a)).join("");
+document.getElementById("n-all").textContent = D.articles.length;
+document.getElementById("pub-count").textContent = D.articles.length + " peer-reviewed";
+</script>
